@@ -1,0 +1,12 @@
+
+version: 2
+
+models:
+    - name: revenue_per_charge
+      description: revenue per charge
+      columns:
+          - name: charge_id
+            description: "The primary key for this table"
+            tests:
+                - unique
+                - not_null
