@@ -3,10 +3,39 @@ version: 2
 
 models:
     - name: revenue_per_charge
-      description: revenue per charge
+      description: The model includes entries of roaming charges including financial information such as price, cost and revenue of the respective charge. Each entry has a charging point operator segment and a location assigned.
       columns:
           - name: charge_id
             description: "The primary key for this table"
             tests:
                 - unique
                 - not_null
+          - name: charge_date
+            description: Date of charge
+          - name: charge_month
+            description: Month of charge
+          - name: operator_id 
+            description: unique id for charging point operator
+          - name: operator_name 
+            description: name of charging point operator
+          - name: cp_count
+            description: distinct count of charging points
+          - name: country
+            description: country of charge
+          - name: cp_id 
+            description: unique id for charge point
+          - name: price_eur 
+            description: price of charge in eur
+          - name: cost_eur
+            description: cost of charge in eur
+          - name: gross_profit_cpo
+            description: gross profit of charging point operator (price_eur - cost_eur) 
+          - name: gross_profit__margin_cpo
+            description: gross_profit_cpo / price_eur
+          - name: roaming_revenue_eur
+            description: Monta roaming revenue (10% of price_eur)
+          - name: cpo_segment
+            description: segment assigned to cpo according to number of charging points (small, medium or large)
+            tests:
+              - accepted_values:
+                  values: ['large (100+ cp)', 'medium (10-99 cp)', 'small (0-9 cp)']
