@@ -29,7 +29,7 @@ models:
           - name: cost_eur
             description: cost of charge in eur
           - name: kwh
-            description: kwh charged
+            description: kwh charged during session
           - name: avg_price_kwh_eur
             description: average price of kwh in eur of charge
           - name: gross_profit_cpo
