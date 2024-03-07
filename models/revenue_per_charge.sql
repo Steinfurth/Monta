@@ -12,6 +12,8 @@ revenue AS (
     cp_id,
     price_eur, 
     cost_eur,
+    kwh,
+    avg_price_kwh_eur,
     price_eur - cost_eur AS gross_profit_cpo,
     (price_eur - cost_eur) / price_eur AS gross_profit_margin_cpo,
     price_eur * 0.10 AS roaming_revenue_eur -- assuming Monta's roaming revenue is 10% of the charge price
