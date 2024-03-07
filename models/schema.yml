@@ -3,7 +3,7 @@ version: 2
 
 models:
     - name: revenue_per_charge
-      description: The model includes entries of roaming charges including financial information such as price, cost and revenue of the respective charge. Each entry has a charging point operator segment and a location assigned.
+      description: The model includes entries of roaming charges including financial information such as price, cost and revenue of the respective charge. Each entry has an operator segment and a location assigned.
       columns:
           - name: charge_id
             description: "The primary key for this table"
@@ -28,6 +28,10 @@ models:
             description: price of charge in eur
           - name: cost_eur
             description: cost of charge in eur
+          - name: kwh
+            description: kwh charged
+          - name: avg_price_kwh_eur
+            description: average price of kwh in eur of charge
           - name: gross_profit_cpo
             description: gross profit of charging point operator (price_eur - cost_eur) 
           - name: gross_profit__margin_cpo
